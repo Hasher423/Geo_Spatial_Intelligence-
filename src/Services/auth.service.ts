@@ -6,9 +6,10 @@ export const createUser = async (data: {
   email: string;
   password:string,
   role?: string;
+  firebaseId:string,
 }) => {
   return await prisma.user.create({
-    data: {
+    data:{
       ...data,
       role: data.role ?? "user",
     },
