@@ -9,9 +9,13 @@ import {
 
 export const registerController = async (req: Request, res: Response) => {
   try {
+    console.log(req.body);
+    
     const user = await createUser(req.body);
     return res.status(201).json(user);
-  } catch {
+  } catch(err) {
+    console.log(err);
+    
     return res.status(500).json({ message: "User creation failed" });
   }
 };
