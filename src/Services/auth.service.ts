@@ -4,7 +4,6 @@ import  prisma  from "../lib/prisma.ts";
 export const createUser = async (data: {
   name: string;
   email: string;
-  password:string,
   role?: string;
   firebaseId:string,
 }) => {
